@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Isaiah Anderson | Professional Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050505;
+    color:white;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+nav{
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(212,175,55,.35);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    color:#d4af37;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:22px;
+}
+
+nav a{
+    color:#f5f5f5;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    padding-top:78px;
+    background:#050505;
+}
+
+.hero-info{
+    display:flex;
+    align-items:center;
+    padding:80px 8%;
+    background:
+        radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 35%),
+        linear-gradient(145deg,#080808,#111,#050505);
+}
+
+.hero-content{
+    max-width:660px;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(212,175,55,.5);
+    color:#d4af37;
+    font-weight:800;
+    margin-bottom:22px;
+    letter-spacing:.5px;
+}
+
+.hero h1{
+    font-size:66px;
+    color:#d4af37;
+    line-height:1.08;
+    margin-bottom:16px;
+}
+
+.hero h2{
+    font-size:24px;
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:17px;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 30px;
+    background:linear-gradient(135deg,#f4d03f,#b8860b);
+    color:#050505;
+    text-decoration:none;
+    font-weight:900;
+    border-radius:8px;
+    transition:.3s;
+    margin:8px 10px 8px 0;
+}
+
+.btn:hover{
+    background:white;
+    transform:translateY(-4px);
+}
+
+/* MINI SLIDESHOW */
+
+.hero-slider{
+    position:relative;
+    min-height:calc(100vh - 78px);
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.hero-slider img{
+    position:absolute;
+    max-width:100%;
+    max-height:100%;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center center;
+    opacity:0;
+    animation:slideShow 40s infinite;
+    background:#000;
+    cursor:pointer;
+}
+
+.hero-slider img:nth-child(1){animation-delay:0s;}
+.hero-slider img:nth-child(2){animation-delay:5s;}
+.hero-slider img:nth-child(3){animation-delay:10s;}
+.hero-slider img:nth-child(4){animation-delay:15s;}
+.hero-slider img:nth-child(5){animation-delay:20s;}
+.hero-slider img:nth-child(6){animation-delay:25s;}
+.hero-slider img:nth-child(7){animation-delay:30s;}
+.hero-slider img:nth-child(8){animation-delay:35s;}
+@keyframes slideShow{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    25%{opacity:1;}
+    33%{opacity:0;}
+    100%{opacity:0;}
+}
+
+.slider-label{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    background:rgba(0,0,0,.65);
+    border:1px solid rgba(212,175,55,.45);
+    padding:14px 18px;
+    color:white;
+    z-index:5;
+}
+
+.slider-label h3{
+    color:#d4af37;
+    font-size:20px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:45px;
+}
+
+.section-title::after{
+    content:"";
+    width:85px;
+    height:3px;
+    background:#d4af37;
+    display:block;
+    margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+    background:#090909;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+}
+
+.gallery-card{
+    background:#000;
+    border:1px solid rgba(212,175,55,.3);
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+}
+
+.gallery-card img{
+    width:100%;
+    height:360px;
+    object-fit:contain;
+    background:#000;
+    display:block;
+}
+
+/* ABOUT */
+
+.about,
+.resume{
+    background:#050505;
+}
+
+.about-layout{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:35px;
+}
+
+.about-box{
+    background:#111;
+    border-left:5px solid #d4af37;
+    padding:35px;
+}
+
+.about-box h3{
+    color:#d4af37;
+    margin-bottom:18px;
+    font-size:25px;
+}
+
+.about-box p{
+    color:#ddd;
+    margin-bottom:15px;
+}
+
+.about-text{
+    background:white;
+    color:#111;
+    padding:35px;
+}
+
+.about-text p{
+    margin-bottom:18px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card,
+.project-card{
+    background:#111;
+    border:1px solid rgba(212,175,55,.28);
+    transition:.3s;
+}
+
+.card{
+    padding:32px;
+}
+
+.card:hover,
+.project-card:hover{
+    transform:translateY(-7px);
+    border-color:#d4af37;
+}
+
+.card h3,
+.project-info h3{
+    color:#d4af37;
+    font-size:23px;
+    margin-bottom:14px;
+}
+
+.card p,
+.project-info p{
+    color:#d0d0d0;
+}
+
+/* SKILLS */
+
+#skills{
+    background:#050505;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    background:
+        radial-gradient(circle at right, rgba(212,175,55,.09), transparent 35%),
+        #090909;
+}
+
+.experience-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* PROJECTS */
+
+.projects{
+    background:#090909;
+}
+
+.project-card{
+    overflow:hidden;
+}
+
+.project-card img{
+    width:100%;
+    height:240px;
+    object-fit:contain;
+    background:#000;
+}
+
+.project-info{
+    padding:28px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#050505;
+}
+
+.contact-box{
+    max-width:850px;
+    background:#111;
+    padding:45px;
+    border-left:5px solid #d4af37;
+}
+
+.contact-box p{
+    margin:18px 0;
+    font-size:18px;
+}
+
+.contact-box a{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#000;
+    color:#aaa;
+}
+
+/* IMAGE MODAL */
+
+.image-modal{
+    display:none;
+    position:fixed;
+    z-index:3000;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.image-modal img{
+    max-width:95%;
+    max-height:90vh;
+    object-fit:contain;
+    border:2px solid #d4af37;
+}
+
+.close-modal{
+    position:absolute;
+    top:25px;
+    right:35px;
+    font-size:42px;
+    color:white;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+    nav{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero,
+    .about-layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero-slider{
+        min-height:520px;
+        order:-1;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:38px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .gallery-card img{
+        height:320px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Isaiah Anderson</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<header class="hero" id="home">
+
+<div class="hero-info">
+<div class="hero-content">
+
+<span class="hero-tag">Information Technology • Leadership • Web Development</span>
+
+<h1>Isaiah Anderson</h1>
+
+<h2>Information Technology Major • Web Developer • IT Professional</h2>
+
+<p>
+A professional portfolio highlighting leadership, technical skills,
+web development experience, community involvement, project coordination,
+networking experiences, and innovative technology projects.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+<a href="resume.pdf" class="btn" download>Download Resume</a>
+
+</div>
+</div>
+
+<div class="hero-slider">
+<img src="./images/team.jpeg" alt="Team" onclick="openModal(this.src)">
+<img src="./images/nat.jpeg" alt="National Honors" onclick="openModal(this.src)">
+<img src="./images/serv.jpeg" alt="Service" onclick="openModal(this.src)">
+<img src="./images/cafe.jpeg" alt="Cafe" onclick="openModal(this.src)">
+<img src="./images/head.jpg" alt="Headshot" onclick="openModal(this.src)">
+<img src="./images/pag.jpg" alt="Pageant" onclick="openModal(this.src)">
+<img src="./images/cisco.jpg" alt="Cisco HBCU Student Day" onclick="openModal(this.src)">
+<img src="./images/cis.jpg" alt="Technology Networking Experience" onclick="openModal(this.src)">
+<div class="slider-label">
+<h3>Leadership & Experience</h3>
+<p>Click any image to enlarge</p>
+</div>
+</div>
+
+</header>
+
+<section class="gallery" id="gallery">
+
+<h2 class="section-title">Leadership & Experiences</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-card">
+<img src="./images/team.jpeg" alt="Team" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/nat.jpeg" alt="National Honors" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/serv.jpeg" alt="Service" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/cafe.jpeg" alt="Cafe" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/head.jpg" alt="Headshot" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/pag.jpg" alt="Pageant" onclick="openModal(this.src)">
+</div>
+<div class="gallery-card">
+<img src="./images/cisco.jpg" alt="Cisco Experience" onclick="openModal(this.src)">
+</div>
+
+<div class="gallery-card">
+<img src="./images/cis.jpg" alt="Technology Networking" onclick="openModal(this.src)">
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-layout">
+
+<div class="about-box">
+<h3>Quick Profile</h3>
+<p><strong>Name:</strong> Isaiah Anderson</p>
+<p><strong>Location:</strong> Charlotte, North Carolina</p>
+<p><strong>Major:</strong> Information Technology</p>
+<p><strong>Classification:</strong> Graduating Senior</p>
+<p><strong>Leadership:</strong> 2025-2026 Senior Class Secretary</p>
+<p><strong>Fraternity:</strong> Spring 2025 initiate into the Beta Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated</p>
+<p><strong>Recognition:</strong> 3x Dean’s List recipient and National Honors Society member</p>
+<p><strong>Professional Exposure:</strong> Cisco and Lenovo HBCU Student Days</p>
+</div>
+
+<div class="about-text">
+<p>
+I am Isaiah Anderson, a graduating senior Information Technology major
+from Charlotte, North Carolina, with a passion for technology,
+leadership, innovation, and professional development.
+</p>
+
+<p>
+I am a 3x Dean’s List recipient, National Honors Society member,
+former Senior Class Secretary for the 2025-2026 academic year,
+and a Spring 2025 initiate into the Beta Iota Chapter of
+Alpha Phi Alpha Fraternity, Incorporated.
+</p>
+
+<p>
+My experience includes web development, database management,
+software development, technical troubleshooting, IT support,
+project coordination, and leadership development. I enjoy creating
+modern digital solutions that combine clean design, functionality,
+and strong user experience.
+</p>
+
+<p>
+I have also had the opportunity to attend HBCU Student Days with
+Cisco and Lenovo, where I gained valuable exposure to corporate
+technology environments, professional networking, career development,
+and conversations with industry professionals. These experiences
+helped me better understand how technology, innovation, communication,
+and relationship-building connect in real-world professional spaces.
+</p>
+
+<p>
+I am passionate about continuous learning and using technology
+to create opportunities, solve problems, and positively impact
+communities through leadership and innovation.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="experience" id="experience">
+
+<h2 class="section-title">Leadership & Professional Experience</h2>
+
+<div class="experience-grid">
+
+<div class="card">
+<h3>Pageant Coordinator</h3>
+<p>
+I served as the pageant coordinator for the 2025-2026 Miss Old Gold and Black Pageant.
+In this role, I supported event planning, participant coordination, communication,
+scheduling, setup, and overall execution. This experience reflects many qualities
+of project management, including organization, time management, leadership,
+problem-solving, attention to detail, and the ability to bring a vision to life
+through teamwork and structure.
+</p>
+</div>
+
+<div class="card">
+<h3>Cisco HBCU Student Day</h3>
+<p>
+My experience attending Cisco’s HBCU Student Day allowed me to network with
+technology professionals, learn more about corporate innovation, and gain insight
+into career opportunities within the tech industry. It strengthened my understanding
+of professional communication, career readiness, and the importance of building
+relationships in technology spaces.
+</p>
+</div>
+
+<div class="card">
+<h3>Lenovo HBCU Student Day</h3>
+<p>
+Attending Lenovo’s HBCU Student Day gave me additional exposure to a major
+technology company and allowed me to connect with professionals, students,
+and industry leaders. This experience helped expand my perspective on technology,
+business, leadership, and the value of networking as an HBCU student preparing
+to enter the professional workforce.
+</p>
+</div>
+
+<div class="card">
+<h3>Campus Leadership</h3>
+<p>
+Through roles such as former Senior Class Secretary and involvement with Alpha Phi Alpha
+Fraternity, Incorporated, I have developed leadership skills centered on communication,
+service, accountability, organization, and representing my peers with professionalism.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Creating modern, responsive, and user-friendly websites with clean design.</p>
+</div>
+
+<div class="card">
+<h3>Programming</h3>
+<p>Experience using Java, Python, SQL, C++, and problem-solving through code.</p>
+</div>
+
+<div class="card">
+<h3>Database Management</h3>
+<p>Knowledge of MySQL, SQL queries, triggers, stored procedures, and audit trails.</p>
+</div>
+
+<div class="card">
+<h3>IT Support</h3>
+<p>Technical troubleshooting, software installation, device setup, and user support.</p>
+</div>
+
+<div class="card">
+<h3>Project Coordination</h3>
+<p>Planning, organizing, communicating, managing timelines, and supporting successful events and projects.</p>
+</div>
+
+<div class="card">
+<h3>Professional Strengths</h3>
+<p>Leadership, communication, teamwork, adaptability, critical thinking, organization, networking, and professionalism.</p>
+</div>
+
+</div>
+</section>
+
+<section class="projects" id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="cards">
+
+<div class="project-card">
+<img src="./images/project1.jpg" alt="SouthMade Productions">
+<div class="project-info">
+<h3>SouthMade Productions</h3>
+<p>
+A professional music production and artist branding website featuring
+artist tools, music genres, audience analytics, and creative media integration.
+</p>
+<br>
+<a href="https://southmade.netlify.app/" class="btn" target="_blank">View Website</a>
+</div>
+</div>
+
+<div class="project-card">
+<img src="./images/project2.jpg" alt="CS Rams Recruit">
+<div class="project-info">
+<h3>CS Rams Recruit</h3>
+<p>
+A modern student recruitment platform developed to showcase academic programs,
+admissions information, student life, and university opportunities.
+</p>
+<br>
+<a href="https://csramsrecruit.netlify.app/" class="btn" target="_blank">View Website</a>
+</div>
+</div>
+
+<div class="project-card">
+<img src="./images/project3.jpg" alt="Portfolio Website">
+<div class="project-info">
+<h3>Professional Portfolio Website</h3>
+<p>
+A responsive portfolio website showcasing technical skills, leadership experience,
+professional achievements, and software development projects.
+</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="./images/smartlot.jpg" alt="SmartLot Parking App">
+<div class="project-info">
+<h3>SmartLot Parking App</h3>
+<p>
+A mobile-style parking availability application designed for students and faculty
+to view available campus parking lots, log in with RamID credentials,
+filter parking types, and refresh spot availability.
+</p>
+<br>
+<a href="https://smartlotsu.netlify.app/" class="btn" target="_blank">View Website</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="resume" id="resume">
+
+<h2 class="section-title">Resume</h2>
+
+<p>
+Download my professional resume to learn more about my experience,
+technical background, leadership, and accomplishments.
+</p>
+
+<a href="resume.pdf" class="btn" download>Download Resume</a>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-box">
+
+<p><strong>Email:</strong>
+<a href="mailto:andersonisaiah518@gmail.com">andersonisaiah518@gmail.com</a>
+</p>
+
+<p><strong>Phone:</strong> (980) 318-2962</p>
+
+<p><strong>LinkedIn:</strong>
+<a href="https://www.linkedin.com/in/isaiaha122" target="_blank">
+linkedin.com/in/isaiaha122
+</a>
+</p>
+
+<p><strong>GitHub:</strong>
+<a href="https://github.com/zayiscool15" target="_blank">
+github.com/zayiscool15
+</a>
+</p>
+
+<p><strong>Projects:</strong>
+<a href="https://southmade.netlify.app/" target="_blank">SouthMade Productions</a>
+|
+<a href="https://csramsrecruit.netlify.app/" target="_blank">CS Rams Recruit</a>
+|
+<a href="https://smartlotsu.netlify.app/" target="_blank">SmartLot</a>
+</p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Isaiah Anderson | Professional Portfolio</p>
+</footer>
+
+<div class="image-modal" id="imageModal">
+<span class="close-modal" onclick="closeModal()">&times;</span>
+<img id="modalImage" src="" alt="Expanded Image">
+</div>
+
+<script>
+function openModal(src){
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal(){
+    document.getElementById("imageModal").style.display = "none";
+    document.getElementById("modalImage").src = "";
+}
+
+document.getElementById("imageModal").addEventListener("click", function(e){
+    if(e.target.id === "imageModal"){
+        closeModal();
+    }
+});
+</script>
+
+</body>
+</html>
